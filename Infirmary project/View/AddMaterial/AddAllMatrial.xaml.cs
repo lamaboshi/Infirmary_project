@@ -1,5 +1,4 @@
-﻿using Infirmary_project.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,15 +13,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Infirmary_project {
+namespace Infirmary_project.View.AddMaterial {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddAllMatrial.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        PresonPage presonPage = new PresonPage();
-        List<string> itemControlList = new List<string> { "lama", "Asia" };
-        public MainWindow() {
+    public partial class AddAllMatrial : UserControl {
+        List<string> itemControlList = new List<string> { "lama","Asia"};
+        public AddAllMatrial() {
             InitializeComponent();
+            ItemControlMatrial.ItemsSource = itemControlList;
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e) {
+            itemControlList.Add(" ");
+            ItemControlMatrial.ItemsSource = null;
             ItemControlMatrial.ItemsSource = itemControlList;
         }
     }

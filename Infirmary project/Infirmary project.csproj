@@ -77,6 +77,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Extenstions\Images_Extenstions.cs" />
+    <Compile Include="View\AddMaterial\AddAllMatrial.xaml.cs">
+      <DependentUpon>AddAllMatrial.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PersonSection\employeeSection.xaml.cs">
       <DependentUpon>employeeSection.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AddMaterial\AddAllMatrial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PersonSection\employeeSection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

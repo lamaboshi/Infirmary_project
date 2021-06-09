@@ -3,11 +3,56 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Infirmary_project" xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls" xmlns:view="clr-namespace:Infirmary_project.View"
+        xmlns:local="clr-namespace:Infirmary_project" xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls" xmlns:view="clr-namespace:Infirmary_project.View" xmlns:view1="clr-namespace:Infirmary_project.View.AddMaterial" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <view:PresonPage/>
+        
+
+            <Grid  Height="400" Width="400" Background="Blue" >
+            <ScrollViewer >
+                <ItemsControl Name="ItemControlMatrial" >
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Expander Grid.Column="0" FlowDirection="RightToLeft"
+    HorizontalAlignment="Stretch"
+    Header="اسم المرض" FontSize="22" Margin="10,23,25,103">
+                                <StackPanel
+      Orientation="Vertical"
+      TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button  Name="ADD" 
+  Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+  HorizontalAlignment="Left" Width="21" Height="24"
+  ToolTip="MaterialDesignFloatingActionMiniButton">
+                                            <materialDesign:PackIcon
+    Kind="Add" Width="10" FontWeight="Bold" 
+    
+   />
+                                        </Button>
+                                        <TextBlock Margin="5"  Text="اضافه مرض"></TextBlock>
+                                    </StackPanel>
+                                    <ListView  Name="ListView1" >
+                                        <ListViewItem Content="Coffie"></ListViewItem>
+                                        <ListViewItem Content="Tea"></ListViewItem>
+                                        <ListViewItem Content="Orange Juice"></ListViewItem>
+                                        <ListViewItem Content="Milk"></ListViewItem>
+                                        <ListViewItem Content="Iced Tea"></ListViewItem>
+                                        <ListViewItem Content="Mango Shake"></ListViewItem>
+                                    </ListView>
+                                </StackPanel>
+                            </Expander>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
     </Grid>
 </Window>
