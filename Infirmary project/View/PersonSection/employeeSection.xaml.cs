@@ -1,5 +1,4 @@
-﻿using Infirmary_project.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,13 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Infirmary_project {
+namespace Infirmary_project.View.PersonSection {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for employeeSection.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        PresonPage presonPage = new PresonPage();
-        public MainWindow() {
+    public partial class employeeSection : UserControl {
+        public employeeSection() {
             InitializeComponent();
         }
     }

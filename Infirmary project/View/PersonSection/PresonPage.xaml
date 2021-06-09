@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="Infirmary_project.View.PresonPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Infirmary_project.View" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+                     FlowDirection="RightToLeft" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ScrollViewer >
+    <Grid Background="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Margin="8">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                            <materialDesign:PackIcon  Width="25" Height="25" Foreground="#d47e7d" Kind=" InfoOutline" />
+                        <TextBlock Text="معلومات الشخص" FontSize="18"/>
+
+                    </StackPanel>
+                    <ToggleButton Name="changePanel" Click="changePanel_Click" HorizontalAlignment="Right" Background="#111834"
+  Style="{StaticResource MaterialDesignActionToggleButton}"
+  ToolTip="MaterialDesignActionLightToggleButton">
+                        <ToggleButton.Content>
+                            <materialDesign:PackIcon Foreground="#d47e7d"
+      Kind="AccountCircle " />
+                        </ToggleButton.Content>
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon Foreground="#d47e7d"
+      Kind=" Briefcase" />
+                        </materialDesign:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+                </Grid>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <StackPanel >
+                            <Grid Margin="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0" Margin="8"
+  materialDesign:HintAssist.Hint="الاسم الكامل"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                <TextBox Grid.Column="1" Margin="8"
+  materialDesign:HintAssist.Hint="اسم الام"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            </Grid>
+                            <Grid Margin="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DatePicker
+Grid.Column="0" Margin="8"
+  materialDesign:HintAssist.Hint="تاريخ الولادة"
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                                <DatePicker
+Grid.Column="1" Margin="8"
+  materialDesign:HintAssist.Hint="تاريخ الدخول"
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                            </Grid>
+                            <Grid Margin="8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0" Margin="8"
+  materialDesign:HintAssist.Hint="مكان السكن"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                <TextBox Grid.Column="1" Margin="8"
+  materialDesign:HintAssist.Hint="الرقم الوطني"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                    <!--image-->
+                    <Grid Margin="10" Grid.Column="1" >
+                        <Ellipse Stroke="#111834" StrokeThickness="3" Width="200"  Height="200" >
+                            <Ellipse.Fill>
+                                    <ImageBrush x:Name="InsertImage" ImageSource="/images/backgroundPerson.jpg" ></ImageBrush>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <Button  Name="ChangImage" Click="ChangImage_Click"   VerticalAlignment="Bottom"  HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFlatButton}">
+                            <materialDesign:PackIcon Foreground="#d47e7d" Height="25" Width="25"  Kind="CameraAlt"  />
+                        </Button>
+                    </Grid>
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <metro:TransitioningContentControl        
+            Name="TransitioningContentControl"
+            Transition="RightReplace" />
+        </Grid>
+            <Grid Margin="10" Grid.Row="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Margin="10" Background="#111834" Foreground="White"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Width="150"
+    ToolTip="اضغط لاضافة الوضع الصحي">
+                        الوضع الصحي
+                    </Button>
+                    <Button Margin="10"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                            Background="#d47e7d"
+                            Foreground="White"
+    Width="150"
+    ToolTip="Resource name: MaterialDesignRaisedLightButton">
+                        حفظ
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        </ScrollViewer >
+</UserControl>
