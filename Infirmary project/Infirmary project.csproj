@@ -84,6 +84,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Extenstions\Images_Extenstions.cs" />
+    <Compile Include="View\AddMaterial\AddAllMatrial.xaml.cs">
+      <DependentUpon>AddAllMatrial.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202106092014026_a.cs" />
     <Compile Include="Migrations\202106092014026_a.designer.cs">
       <DependentUpon>202106092014026_a.cs</DependentUpon>
@@ -126,7 +129,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+
     <Page Include="View\MainPage.xaml">
+
+    <Page Include="View\AddMaterial\AddAllMatrial.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
