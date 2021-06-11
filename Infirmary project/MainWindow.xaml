@@ -21,7 +21,7 @@
         <materialDesign:ColorZone
                 Grid.Row="0"
                 Mode="PrimaryDark"
-            Background="#0E124F"
+            Background=" #111834"
                 Padding="4"
                 CornerRadius="3"
                 materialDesign:ShadowAssist.ShadowDepth="Depth3">
@@ -40,9 +40,7 @@
             </Grid>
         </materialDesign:ColorZone>
         <Grid Grid.Row="1">
-            <ContentControl Name="Content" x:FieldModifier="public"></ContentControl>       
-
-    
+            <ContentControl Name="Content" x:FieldModifier="public"></ContentControl>        
     </Grid>
     </Grid>
 

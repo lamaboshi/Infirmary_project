@@ -21,12 +21,13 @@ namespace Infirmary_project {
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
-        InfirmaryProjectContext context =new InfirmaryProjectContext();
+       InfirmaryProjectContext context =new InfirmaryProjectContext();
         PresonPage presonPage = new PresonPage();
         MainPage page = new MainPage();
+        
         public MainWindow() {
             
-        InitializeComponent();
+            InitializeComponent();
             var g = context.EntrySides.Where(s=> s.Name=="h");
             Content.Content = page;
         }

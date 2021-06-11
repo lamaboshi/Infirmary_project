@@ -37,7 +37,7 @@ namespace Infirmary_project.View
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            lama.IsOpen = false;
+            //lama.IsOpen = false;
         }
     }
 }

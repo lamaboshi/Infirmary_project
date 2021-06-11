@@ -10,18 +10,18 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <materialDesign:DialogHost IsOpen="False" CloseOnClickAway="True" Name="dialog" Grid.RowSpan="4">
         <materialDesign:DialogHost.DialogContent>
-           
+
             <Grid Height="200" Width="300">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition Height="auto"> </RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"> </ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <ToggleButton Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 15 0 0" IsChecked="False"
+                <ToggleButton Grid.Column="0" Foreground="#111834" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 15 0 0" IsChecked="False"
   Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
   ToolTip="MaterialDesignSwitchLightToggleButton"
   />
@@ -44,7 +44,7 @@
                     </CheckBox>
                 </StackPanel>
                 <ToggleButton Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 16 0 0"
-  Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
+  Style="{StaticResource MaterialDesignSwitchLightToggleButton}" Foreground="#111834"
   ToolTip="MaterialDesignSwitchLightToggleButton"
   IsChecked="False" />
                 <TextBlock Text="موظفين" Grid.Column="1" Margin="40 10 0  0" FontSize="18"></TextBlock>
@@ -65,91 +65,24 @@
                         نوع الوظيفة
                     </CheckBox>
                 </StackPanel>
-                <Button Content="موافق" Name="close" Click="Close_Click" Width="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="0 0 0 10"></Button>
+                <Button Content="موافق" Name="close" Click="Close_Click" Background="#d47e7d" BorderBrush="#d47e7d" Width="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="0 0 0 10"></Button>
             </Grid>
-            
+
         </materialDesign:DialogHost.DialogContent>
-        <materialDesign:DialogHost IsOpen="False" CloseOnClickAway="False" Name="lama"  Grid.RowSpan="4">
-            <materialDesign:DialogHost.DialogContent>
-                <Grid Height="300" Width="400">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"></RowDefinition>
-                        <RowDefinition Height="auto"></RowDefinition>
-                        <RowDefinition Height="auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal" Grid.Row="0">
-                    <TextBox Width="200"
-  materialDesign:HintAssist.Hint="اسم الشخص" HorizontalAlignment="Left" Margin="25 0 0 0"
-  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                        <TextBox Width="80"
-  materialDesign:HintAssist.Hint=" الكمية" HorizontalAlignment="Left" Margin="20 0 0 0"
-  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                 
-                    </StackPanel>
-                    <Button Grid.Row="0"  Grid.Column="1" Height="30" Width="30" Margin="0 20 20 0" VerticalAlignment="Top" HorizontalAlignment="Right"
-  Style="{StaticResource MaterialDesignFloatingActionLightButton}"
-  ToolTip="MaterialDesignFloatingActionLightButton">
-                        <materialDesign:PackIcon Kind="Add" HorizontalAlignment="Center" VerticalAlignment="Center"
-            Height="20"
-    Width="20" />
-                    </Button>
-                    <DataGrid  Name="DataDialog"  HorizontalAlignment="Center"  Grid.Row="1" Grid.ColumnSpan="2"
-                  EnableColumnVirtualization="True"
-                  EnableRowVirtualization="True"
-                  FontSize="14"
-                  IsReadOnly="True"
-                  BorderThickness="1"
-                  SelectionMode="Single"
-                  SelectionUnit="FullRow"
-                  ScrollViewer.CanContentScroll="True"
-                  CanUserSortColumns="True"
-                  CanUserAddRows="False"
-                  AutoGenerateColumns="False"
-                  HorizontalScrollBarVisibility="Disabled"
-                  materialDesign:DataGridAssist.CellPadding="13 8 8 8"
-                  materialDesign:DataGridAssist.ColumnHeaderPadding="8" Height="190" Margin="0 10 0 0" >
-                        <DataGrid.Columns>
-                            <materialDesign:DataGridTextColumn Header="اسم الشخص" Width="155"  >
-                                <DataGridTextColumn.HeaderStyle >
-                                    <Style TargetType="DataGridColumnHeader">
-                                        <Setter Property="HorizontalContentAlignment"
-                                      Value="Center" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                            </materialDesign:DataGridTextColumn>
-                            <materialDesign:DataGridTextColumn Header="الكمية" Width="155">
-                                <DataGridTextColumn.HeaderStyle >
-                                    <Style TargetType="DataGridColumnHeader">
-                                        <Setter Property="HorizontalContentAlignment"
-                                      Value="Center" />
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
-                            </materialDesign:DataGridTextColumn>
-                        </DataGrid.Columns>
 
-                        <DataGrid.Resources>
-                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                                <Setter Property="Background" Value="#F7EDEDED" />
-                            </Style>
-                        </DataGrid.Resources>
-                    </DataGrid>
-                    <Button Grid.Row="2" Content="حفظ" Width="150" Margin="0 10 0 0" ></Button>
-                </Grid>
-            </materialDesign:DialogHost.DialogContent>
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
 
-            <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            
-                </Grid.RowDefinitions>
-        <Grid  Margin="0 10 0 0" Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <materialDesign:ColorZone
+            </Grid.RowDefinitions>
+            <Grid  Margin="0 10 0 0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <materialDesign:ColorZone
         Mode="Standard" 
          HorizontalAlignment="Left" VerticalAlignment="Center"
         CornerRadius="15" Grid.Column="0"
@@ -157,91 +90,90 @@
         Background="LightGray"
         Margin="10 0 0 0"
         materialDesign:ShadowAssist.ShadowDepth="Depth1" >
-                <StackPanel   Orientation="Horizontal" >
-                    <materialDesign:PackIcon Margin="0 8 7 0"
+                    <StackPanel   Orientation="Horizontal" >
+                        <materialDesign:PackIcon Margin="0 8 7 0"
               Kind="Magnify"
               Opacity=".56"   HorizontalAlignment="Right"/>
-                    <TextBox Width="350"  
+                        <TextBox Width="350"  
     Name="SearchEmployee" 
   materialDesign:HintAssist.Hint="بحث"  HorizontalAlignment="Right" Margin="0 0 5 6" />
 
-                </StackPanel>
+                    </StackPanel>
 
-            </materialDesign:ColorZone>
-            <Button Content="hjsdjdh" Name="open" Click="Open_Click" Width="150" Margin="0 0 10 0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"></Button>
-        </Grid>
-                <Grid Grid.Row="1" Height="350">
-                    <ItemsControl Name="ListView"  Margin="10">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Border CornerRadius="15"  Background="WhiteSmoke"
+                </materialDesign:ColorZone>
+                <Button Content="hjsdjdh" Name="open" BorderBrush=" #d47e7d" Click="Open_Click" Background="#d47e7d" Width="150" Margin="0 0 10 0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"></Button>
+            </Grid>
+            <Grid Grid.Row="1" Height="350">
+                <ItemsControl Name="ListView"  Margin="10">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="15"  Background="WhiteSmoke"
                 BorderBrush="#0E124F" 
                   Height="200" Width=" 200" Margin="15 0 0 0" >
-                                    <Border.Effect>
-                                        <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
+                                <Border.Effect>
+                                    <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
               materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
-                                    </Border.Effect>
+                                </Border.Effect>
 
-                                    <StackPanel Margin="0 10 0 0">
-                                        <Label  Content="{Binding Name}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
-                                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="15 0 0 0">
-                                            <Label Content="الرياضة:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
-                                            <Label Content="{Binding SportName}"></Label>
-                                        </StackPanel>
+                                <StackPanel Margin="0 10 0 0">
+                                    <Label  Content="{Binding Name}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="15 0 0 0">
+                                        <Label Content="الرياضة:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                                        <Label Content="{Binding SportName}"></Label>
+                                    </StackPanel>
 
-                                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="15 3 0 0">
-                                            <Label Content="الشريحة:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
-                                            <Label Content="{Binding SectionName}"></Label>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="15 3 0 0">
-                                            <Label Content="المدرب:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
-                                            <Label Content="{Binding FullName}"></Label>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Margin="15 3 0 0">
-                                            <Label Content="تاريخ البدء:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
-                                            <Label Content="{Binding MyProperty,StringFormat=d}"></Label>
-                                        </StackPanel>
-                                        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="35 3 0 0">
-                                            <Button  
+                                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="15 3 0 0">
+                                        <Label Content="الشريحة:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                                        <Label Content="{Binding SectionName}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="15 3 0 0">
+                                        <Label Content="المدرب:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                                        <Label Content="{Binding FullName}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Margin="15 3 0 0">
+                                        <Label Content="تاريخ البدء:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                                        <Label Content="{Binding MyProperty,StringFormat=d}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="35 3 0 0">
+                                        <Button  
               Height="20"  HorizontalAlignment="Center" VerticalAlignment="Center"
                     Width="60" TabIndex="{Binding Id}"
                  Name="DeleteBtn"  BorderBrush="#F59A3D" 
    Background="#F59A3D">
-                                                <Label Content="حذف" Foreground="White" FontFamily="/BeFit;component/Font/#Tajawal"
+                                            <Label Content="حذف" Foreground="White" FontFamily="/BeFit;component/Font/#Tajawal"
                                         Margin="-4 -8 -4 -3" 
                 FontSize="12"    ></Label>
-                                            </Button >
-                                            <Button  Margin="15 0 0 0" TabIndex="{Binding Id}"
+                                        </Button >
+                                        <Button  Margin="15 0 0 0" TabIndex="{Binding Id}"
               Height="20" Name="MigrationBtn" 
                     Width="60"
               BorderBrush="#F59A3D"   
    Background="#F59A3D">
-                                                <Label   Margin="-4 -8 -4 -3" FontFamily="/BeFit;component/Font/#Tajawal"
+                                            <Label   Margin="-4 -8 -4 -3" FontFamily="/BeFit;component/Font/#Tajawal"
                         Content="ترحيل"
              Foreground="White"
                 FontSize="12">
-                                                </Label>
-                                            </Button >
-                                        </StackPanel>
+                                            </Label>
+                                        </Button >
                                     </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel ></WrapPanel>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
-                </Grid>
-                <Button Grid.Row="2" HorizontalAlignment="Right"  Margin="4" VerticalAlignment="Bottom"
-  Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel ></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </Grid>
+            <Button Grid.Row="2" HorizontalAlignment="Right"  Margin="4" VerticalAlignment="Bottom"
+  Style="{StaticResource MaterialDesignFloatingActionLightButton}" Background="#111834"
   ToolTip="MaterialDesignFloatingActionLightButton">
-            <materialDesign:PackIcon Kind="Add" 
-            Height="30"
+                <materialDesign:PackIcon Kind="Add" 
+            Height="30" Foreground="#d47e7d"
     Width="30" />
-        </Button>
-    </Grid>
-    </materialDesign:DialogHost>
+            </Button>
+        </Grid>
     </materialDesign:DialogHost>
 </UserControl>
