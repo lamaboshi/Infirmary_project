@@ -13,17 +13,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Infirmary_project.Model;
 
 namespace Infirmary_project {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        InfirmaryProjectContext context =new InfirmaryProjectContext();
         PresonPage presonPage = new PresonPage();
-        List<string> itemControlList = new List<string> { "lama", "Asia" };
+        
         public MainWindow() {
-            InitializeComponent();
-            ItemControlMatrial.ItemsSource = itemControlList;
+            
+        InitializeComponent();
+            var g = context.EntrySides.Where(s=> s.Name=="h");
         }
     }
 }
