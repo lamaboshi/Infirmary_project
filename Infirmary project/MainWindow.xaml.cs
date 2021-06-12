@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Infirmary_project.View;
+using Infirmary_project.Model;
 
 namespace Infirmary_project {
     /// <summary>
@@ -22,10 +22,16 @@ namespace Infirmary_project {
     public partial class MainWindow : Window {
        
         public static ContentControl control;
-        PresonPage presonPage = new PresonPage(); 
+
+       InfirmaryProjectContext context =new InfirmaryProjectContext();
+        PresonPage presonPage = new PresonPage();
+        MainPage page = new MainPage();
         
         public MainWindow() {
+            
             InitializeComponent();
+            var g = context.EntrySides.Where(s=> s.Name=="h");
+            Content.Content = page;
         }
 
     }

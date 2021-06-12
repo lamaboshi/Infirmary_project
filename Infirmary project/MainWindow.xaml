@@ -4,10 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Infirmary_project" xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls" xmlns:view="clr-namespace:Infirmary_project.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         
+
         mc:Ignorable="d"
+        FlowDirection="RightToLeft" 
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <materialDesign:ColorZone
+                Grid.Row="0"
+                Mode="PrimaryDark"
+            Background=" #111834"
+                Padding="4"
+                CornerRadius="3"
+                materialDesign:ShadowAssist.ShadowDepth="Depth3">
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock  HorizontalAlignment="Left" Text="رئيسية" FontSize="24" Margin="10 0 0 0"></TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                    <materialDesign:PackIcon Kind="ServerNetwork"  Margin="10 0 10 0" Foreground="White" Grid.Column="1" Height="28" Width="28" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <materialDesign:PackIcon Kind="Search" Margin="10 0 10 0" Foreground="White" Grid.Column="1" Height="28" Width="28" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    <materialDesign:PackIcon Kind="AccountCircleOutline" Margin="10 0 10 0" Foreground="White" Grid.Column="1" Height="28" Width="28" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </materialDesign:ColorZone>
+        <Grid Grid.Row="1">
+            <ContentControl Name="Content" x:FieldModifier="public"></ContentControl>        
     </Grid>
+    </Grid>
+
 </Window>
