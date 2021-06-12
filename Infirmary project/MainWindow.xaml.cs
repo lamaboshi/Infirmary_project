@@ -13,15 +13,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Infirmary_project.View;
 
 namespace Infirmary_project {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
-        PresonPage presonPage = new PresonPage();
+       
+        public static ContentControl control;
+        PresonPage presonPage = new PresonPage(); 
+        
         public MainWindow() {
             InitializeComponent();
         }
+
     }
 }
