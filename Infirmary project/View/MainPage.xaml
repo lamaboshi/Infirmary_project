@@ -69,7 +69,7 @@
             </Grid>
 
         </materialDesign:DialogHost.DialogContent>
-
+        <ScrollViewer>
         <Grid Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
@@ -101,15 +101,15 @@
                     </StackPanel>
 
                 </materialDesign:ColorZone>
-                <Button Content="hjsdjdh" Name="open" BorderBrush=" #d47e7d" Click="Open_Click" Background="#d47e7d" Width="150" Margin="0 0 10 0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"></Button>
+                <Button Content="بحث حسب .." Name="open" BorderBrush=" #d47e7d" Click="Open_Click" Background="#d47e7d" Width="150" Margin="0 0 10 0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"></Button>
             </Grid>
-            <Grid Grid.Row="1" Height="350">
+            <Grid Grid.Row="1" >
                 <ItemsControl Name="ListView"  Margin="10">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border CornerRadius="15"  Background="WhiteSmoke"
                 BorderBrush="#0E124F" 
-                  Height="200" Width=" 200" Margin="15 0 0 0" >
+                  Height="200" Width=" 200" Margin="8" >
                                 <Border.Effect>
                                     <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
               materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
@@ -167,7 +167,7 @@
                     </ItemsControl.ItemsPanel>
                 </ItemsControl>
             </Grid>
-            <Button Grid.Row="2" HorizontalAlignment="Right"  Margin="4" VerticalAlignment="Bottom"
+            <Button x:Name="addPerson" Click="addPerson_Click" Grid.Row="2" HorizontalAlignment="Right"  Margin="4" VerticalAlignment="Bottom"
   Style="{StaticResource MaterialDesignFloatingActionLightButton}" Background="#111834"
   ToolTip="MaterialDesignFloatingActionLightButton">
                 <materialDesign:PackIcon Kind="Add" 
@@ -175,5 +175,6 @@
     Width="30" />
             </Button>
         </Grid>
+        </ScrollViewer>
     </materialDesign:DialogHost>
 </UserControl>

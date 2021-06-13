@@ -20,9 +20,13 @@ namespace Infirmary_project.View
     /// </summary>
     public partial class MainPage : UserControl
     {
+        private ContentControl content;
+        List<string> testList = new List<string> { "Test", "Test", "Test", "Test", "Test", "Test", "Test" };
         public MainPage()
         {
             InitializeComponent();
+            content = HomePage.contentHold;
+            ListView.ItemsSource = testList;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -38,6 +42,10 @@ namespace Infirmary_project.View
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             //lama.IsOpen = false;
+        }
+
+        private void addPerson_Click(object sender, RoutedEventArgs e) {
+            content.Content = HomePage.presonPage=new PresonPage();
         }
     }
 }

@@ -22,12 +22,13 @@ namespace Infirmary_project.View {
     public partial class PresonPage : UserControl {
         guestSection guestSection = new guestSection();
         employeeSection employeeSection = new employeeSection();
+        private ContentControl control;
         OpenFileDialog of;
         bool isEmployee = false;
         public PresonPage() {
             InitializeComponent();
             TransitioningContentControl.Content = guestSection;
-
+            control = HomePage.contentHold;
         }
 
         private void ChangImage_Click(object sender, RoutedEventArgs e) {
@@ -43,6 +44,11 @@ namespace Infirmary_project.View {
         private void changePanel_Click(object sender, RoutedEventArgs e) {
             isEmployee = !isEmployee;
             if (isEmployee) { TransitioningContentControl.Content = employeeSection ; } else { TransitioningContentControl.Content = guestSection; }
+        }
+
+        private void health_Click(object sender, RoutedEventArgs e) {
+            control.Content = HomePage.prescription = new prescription();
+
         }
     }
 }
