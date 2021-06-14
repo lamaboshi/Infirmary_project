@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Infirmary_project.View;
+using Infirmary_project.View.AddMaterial;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,10 +24,12 @@ namespace Infirmary_project
     {
         List<String> itemcontrollist = new List<string> { "Asia" };
         List<String> itemcontrollist1 = new List<string> { "Asia" };
+        private ContentControl content;
         public prescription()
         { 
             
             InitializeComponent();
+            content = HomePage.contentHold;
             ItemControlMatrial.ItemsSource = itemcontrollist;
             ItemControlMatrial2.ItemsSource = itemcontrollist1;
         }
@@ -39,6 +43,10 @@ namespace Infirmary_project
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             Host.IsOpen = false;
+        }
+
+        private void midc_Click(object sender, RoutedEventArgs e) {
+            content.Content = HomePage.addAllMatrial = new AddAllMatrial(true);
         }
     }
 }

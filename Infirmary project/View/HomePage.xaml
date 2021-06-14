@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Infirmary_project.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        WindowState="Maximized"
                 FlowDirection="RightToLeft" 
         WindowStartupLocation="CenterScreen"
         Title="HomePage" Height="450" Width="800">
@@ -29,17 +30,17 @@
 
                 <TextBlock  HorizontalAlignment="Left" Text="رئيسية" Foreground="White" FontSize="24" Margin="10 0 0 0"></TextBlock>
                 <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
-                    <Button x:Name="report" Click="report_Click" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10 0" Grid.Column="1"
+                    <Button x:Name="report" Click="report_Click" ToolTip="تقارير" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10 0" Grid.Column="1"
     Style="{StaticResource MaterialDesignFlatButton}">
-                        <materialDesign:PackIcon Height="25" Width="25"  Kind="ServerNetwork"  Foreground="White"/>
+                        <materialDesign:PackIcon Height="25" Width="25"  Kind="ClipboardText"  Foreground="White"/>
                     </Button>
-                    <Button x:Name="box" Click="box_Click" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10 0" Grid.Column="1"
+                    <Button x:Name="box" Click="box_Click" ToolTip="مستودع"  HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10 0" Grid.Column="1"
     Style="{StaticResource MaterialDesignFlatButton}">
-                        <materialDesign:PackIcon Height="25" Width="25"  Kind="Search"  Foreground="White"/>
+                        <materialDesign:PackIcon Height="25" Width="25"  Kind="Buffer"  Foreground="White"/>
                     </Button>
-                    <Button x:Name="main" Click="main_Click" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10 0" Grid.Column="1"
+                    <Button x:Name="main" Click="main_Click" ToolTip="الرئيسية" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10 0" Grid.Column="1"
     Style="{StaticResource MaterialDesignFlatButton}">
-                        <materialDesign:PackIcon Height="25" Width="25"  Kind="AccountCircleOutline"  Foreground="White"/>
+                        <materialDesign:PackIcon Height="25" Width="25"  Kind="Contacts"  Foreground="White"/>
                     </Button>
 
                 </StackPanel>

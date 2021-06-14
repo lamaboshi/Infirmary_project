@@ -84,8 +84,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Extenstions\Images_Extenstions.cs" />
+    <Compile Include="View\AddMaterial\Add prescription.xaml.cs">
+      <DependentUpon>Add prescription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddMaterial\AddReportPage.xaml.cs">
+      <DependentUpon>AddReportPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LogInPage.xaml.cs">
+      <DependentUpon>LogInPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\prescription.xaml.cs">
       <DependentUpon>prescription.xaml</DependentUpon>
@@ -123,6 +132,12 @@
     <Compile Include="View\PersonSection\PresonPage.xaml.cs">
       <DependentUpon>PresonPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ReportSection.xaml.cs">
+      <DependentUpon>ReportSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StorePage.xaml.cs">
+      <DependentUpon>StorePage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -135,7 +150,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AddMaterial\Add prescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddMaterial\AddReportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LogInPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,6 +187,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PersonSection\PresonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReportSection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StorePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

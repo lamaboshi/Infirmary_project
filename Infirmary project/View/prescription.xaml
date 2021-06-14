@@ -455,7 +455,7 @@
                     </DataGrid.Resources>
                 </DataGrid>
             </Grid>
-            <Button Grid.Row="2"  Background="#d47e7d" HorizontalAlignment="Right" VerticalAlignment="Bottom" FlowDirection="LeftToRight"
+            <Button Name="midc" Click="midc_Click" Grid.Row="2"  Background="#d47e7d" HorizontalAlignment="Right" VerticalAlignment="Bottom" FlowDirection="LeftToRight"
   Style="{StaticResource MaterialDesignFloatingActionButton}" 
   ToolTip="MaterialDesignFloatingActionButton" Margin="20"  >
                 <materialDesign:PackIcon

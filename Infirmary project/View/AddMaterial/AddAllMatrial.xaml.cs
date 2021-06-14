@@ -18,16 +18,23 @@ namespace Infirmary_project.View.AddMaterial {
     /// Interaction logic for AddAllMatrial.xaml
     /// </summary>
     public partial class AddAllMatrial : UserControl {
-        List<string> itemControlList = new List<string> { "lama","Asia"};
-        public AddAllMatrial() {
+        public static ContentControl content;
+        public static AddReportPage addReport;
+        public static Add_prescription prescription;
+        bool typeScreen;
+        public AddAllMatrial(bool screen) {
             InitializeComponent();
-            ItemControlMatrial.ItemsSource = itemControlList;
+            content = hold;
+            typeScreen = screen;
+            initializPage();
+        }
+       void initializPage() {
+            if (typeScreen) {
+                content.Content = prescription = new Add_prescription();
+            } else {
+                content.Content = addReport = new AddReportPage();
+            }
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e) {
-            itemControlList.Add(" ");
-            ItemControlMatrial.ItemsSource = null;
-            ItemControlMatrial.ItemsSource = itemControlList;
-        }
     }
 }

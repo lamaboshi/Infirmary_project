@@ -1,0 +1,160 @@
+﻿<UserControl x:Class="Infirmary_project.View.StorePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Infirmary_project.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <WrapPanel Grid.Row="0" Margin="10 15 10 15" >
+            <Border CornerRadius="15" Margin="5 0 10 0"   Background="#d47e7d"  Height="60" Width="120" >
+                <Border.Effect>
+                    <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
+              materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
+                </Border.Effect>
+                <Label Content="اغذية" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="15"></Label>
+            </Border>
+            <Border CornerRadius="15" Margin="5 0 10 0"   Background="#d47e7d"  Height="60" Width="120" >
+                <Border.Effect>
+                    <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
+              materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
+                </Border.Effect>
+                <Label Content="منظفات" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="15"></Label>
+            </Border>
+            <Border CornerRadius="15" Margin="5 0 10 0"   Background="#d47e7d"  Height="60" Width="120" >
+                <Border.Effect>
+                    <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
+              materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
+                </Border.Effect>
+                <Label Content="ادوية" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="15"></Label>
+            </Border>
+
+        </WrapPanel>
+        <materialDesign:ColorZone Grid.Row="1" Margin="10 10 10 20" Height="500"
+      materialDesign:ShadowAssist.ShadowDepth="Depth3"  materialDesign:ShadowAssist.ShadowEdges="Bottom,Left,Right,Top"
+     BorderBrush="LightGray"  CornerRadius="10" Background="White" BorderThickness="1">
+            <WrapPanel >
+                <Border CornerRadius="15"  Background="WhiteSmoke"
+                BorderBrush="#0E124F" 
+                  Height="100" Width="150" Margin="10 5 5 0" >
+                    <Border.Effect>
+                        <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
+              materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
+                    </Border.Effect>
+
+                    <StackPanel Margin="0 10 0 0">
+                        <Label  Content="{Binding Name}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="15 0 0 0">
+                            <Label Content="المادة:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SportName}"></Label>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="15 3 0 0">
+                            <Label Content="الكمية:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SectionName}"></Label>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="15"  Background="WhiteSmoke"
+                BorderBrush="#0E124F" 
+                  Height="100" Width="150" Margin="10 5 5 0"  >
+                    <Border.Effect>
+                        <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
+              materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
+                    </Border.Effect>
+
+                    <StackPanel Margin="0 10 0 0">
+                        <Label  Content="{Binding Name}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="15 0 0 0">
+                            <Label Content="المادة:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SportName}"></Label>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="15 3 0 0">
+                            <Label Content="الكمية:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SectionName}"></Label>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="15"  Background="WhiteSmoke"
+                BorderBrush="#0E124F" 
+                  Height="100" Width="150" Margin="10 5 5 0"   >
+                    <Border.Effect>
+                        <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
+              materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
+                    </Border.Effect>
+
+                    <StackPanel Margin="0 10 0 0">
+                        <Label  Content="{Binding Name}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="15 0 0 0">
+                            <Label Content="المادة:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SportName}"></Label>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="15 3 0 0">
+                            <Label Content="الكمية:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SectionName}"></Label>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="15"  Background="WhiteSmoke"
+                BorderBrush="#0E124F" 
+                  Height="100" Width="150" Margin="10 5 5 0"   >
+                    <Border.Effect>
+                        <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
+              materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
+                    </Border.Effect>
+
+                    <StackPanel Margin="0 10 0 0">
+                        <Label  Content="{Binding Name}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="15 0 0 0">
+                            <Label Content="المادة:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SportName}"></Label>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="15 3 0 0">
+                            <Label Content="الكمية:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SectionName}"></Label>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+                <Border CornerRadius="15"  Background="WhiteSmoke"
+                BorderBrush="#0E124F" 
+                  Height="100" Width="150" Margin="10 5 5 0"   >
+                    <Border.Effect>
+                        <DropShadowEffect  materialDesign:ShadowAssist.ShadowEdges="Left,Top" Color="LightGray"
+              materialDesign:ShadowAssist.ShadowDepth="Depth1"   ></DropShadowEffect>
+                    </Border.Effect>
+
+                    <StackPanel Margin="0 10 0 0">
+                        <Label  Content="{Binding Name}"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="15 0 0 0">
+                            <Label Content="المادة:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SportName}"></Label>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Margin="15 3 0 0">
+                            <Label Content="الكمية:" FontSize="15" FontFamily="/BeFit;component/Font/#Tajawal"></Label>
+                            <Label Content="{Binding SectionName}"></Label>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </materialDesign:ColorZone>
+      
+        <Button x:Name="addreport" Click="addreport_Click" Grid.Row="2"  Background="#d47e7d" HorizontalAlignment="Right" VerticalAlignment="Bottom" FlowDirection="LeftToRight"
+  Style="{StaticResource MaterialDesignFloatingActionButton}" 
+  ToolTip="MaterialDesignFloatingActionButton" Margin="20 0 30 30"  >
+            <materialDesign:PackIcon
+    Kind="Add" Width="40" Height="30"
+    />
+        </Button>
+    </Grid>
+</UserControl>

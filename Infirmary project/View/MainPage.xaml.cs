@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Infirmary_project.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,19 @@ namespace Infirmary_project.View
     public partial class MainPage : UserControl
     {
         private ContentControl content;
+        List<Person> people;
+        InfirmaryProjectContext context = new InfirmaryProjectContext();
         List<string> testList = new List<string> { "Test", "Test", "Test", "Test", "Test", "Test", "Test" };
         public MainPage()
         {
             InitializeComponent();
             content = HomePage.contentHold;
-            ListView.ItemsSource = testList;
+            initializData();
+        }
+        void initializData() {
+            people = new List<Person>();
+            people = context.people.ToList();
+            ListViewPerson.ItemsSource = people;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -46,6 +54,10 @@ namespace Infirmary_project.View
 
         private void addPerson_Click(object sender, RoutedEventArgs e) {
             content.Content = HomePage.presonPage=new PresonPage();
+        }
+
+        private void ShowPerson_Click(object sender, RoutedEventArgs e) {
+            content.Content = HomePage.presonPage = new PresonPage();
         }
     }
 }
