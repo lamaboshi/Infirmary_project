@@ -4,115 +4,105 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Infirmary_project.View.AddMaterial" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid >
-        <ItemsControl Name="ItemControlMatrial" >
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <materialDesign:Card Margin="25" Width="450" UniformCornerRadius="10"
-  Background="{DynamicResource MaterialDesignBackground}">
-                        <Expander
-      Header="اضافة تقرير">
-                            <StackPanel>
-                                <Grid Margin="10">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid Margin="8" Grid.Column="0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Grid.Row="0" Text="المادة"/>
-                                        <ComboBox  Grid.Row="1"  >
-                                            <Button
-    Style="{StaticResource MaterialDesignRaisedLightButton}"
-    Width="100"
-    ToolTip="Resource name: MaterialDesignRaisedLightButton">
-                                                _LIGHT
-                                            </Button>
-                                            <ComboBoxItem Content="Milk">
-                                            </ComboBoxItem>
-
-                                        </ComboBox>
-                                    </Grid>
-                                    <Grid Margin="8" Grid.Column="1">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Grid.Row="0" Text="نوع المادة"/>
-                                        <ComboBox  Grid.Row="1"  >
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="auto"/>
-                                                    <ColumnDefinition/>
-
-                                                </Grid.ColumnDefinitions>
-                                                <Button Grid.Column="0" Style="{StaticResource MaterialDesignFlatButton}">
-                                                    <materialDesign:PackIcon Kind="FindReplace" />
-                                                </Button>
-                                                <TextBox  Grid.Column="1"  materialDesign:HintAssist.Hint="Search"
-  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                                            </Grid>
-                                            <ComboBoxItem Content="Milk">
-                                            </ComboBoxItem>
-
-                                        </ComboBox>
-                                    </Grid>
-
-
-                                </Grid>
-                                <Grid Margin="10">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Grid Margin="8" Grid.Column="0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Grid.Row="0" Text="التاريخ"/>
-                                        <DatePicker Margin="8" Grid.Row="1"
+             mc:Ignorable="d" >
+    <Grid Background="White" Height="400" Width="450">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel >
+                <materialDesign:ColorZone Background="#111834"
+  Padding="16">
+                    <TextBlock Foreground="White"
+      VerticalAlignment="Center" HorizontalAlignment="Center">
+    اضافة تقرير
+                    </TextBlock>
+                </materialDesign:ColorZone>
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox
+  materialDesign:HintAssist.Hint="اسم الموظف"
+Grid.Column="0" Margin="15 8"
+  VerticalAlignment="Bottom">
+                    </ComboBox>
+                    <DatePicker
+Grid.Column="1" Margin="15 8"
+  materialDesign:HintAssist.Hint="تاريخ "
   Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-
-                                    </Grid>
-                                    <Grid Margin="8" Grid.Column="1">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition/>
-                                            <RowDefinition/>
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Grid.Row="0" Text="الكمية"/>
-                                        <TextBox Margin="8" Grid.Row="1"
+                </Grid>
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox
+  materialDesign:HintAssist.Hint="حالة التقرير"
+Grid.Column="0" Margin="15 8"
+  VerticalAlignment="Bottom">
+                    </ComboBox>
+                </Grid>
+            </StackPanel>
+        </Grid>
+        <ScrollViewer  Grid.Row="1">
+        <Grid>
+            <StackPanel>
+                <Separator/>
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox Name="Mname"
+  materialDesign:HintAssist.Hint="اسم المادة"
+Grid.Column="0" Margin="15 8"
+  VerticalAlignment="Bottom">
+                    </ComboBox>
+                    <TextBox Name="amountText" Grid.Column="1" Margin="15 8"
+  materialDesign:HintAssist.Hint="الكمية"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                                    </Grid>
+                    <Button Name="addMat" Click="addMat_Click" Grid.Column="2" Margin="8" Background="#d47e7d"
+  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+  ToolTip="MaterialDesignFloatingActionMiniLightButton">
+                        <materialDesign:PackIcon
+    Kind="Add"
+                            Foreground="White"
+    Height="24"
+    Width="24" />
+                    </Button>
+                </Grid>
+                
+                <ListView Name="MListView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Focusable" Value="false"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="8" Width="400">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
 
-                                </Grid>
-                                <CheckBox Foreground="Gray" Margin="10" Opacity="0.6"
-    Style="{StaticResource MaterialDesignCheckBox}">
-                                    IsNew
-                                </CheckBox>
-                                <Button Margin="10" Background="#111834" Foreground="White"
-    Style="{StaticResource MaterialDesignRaisedLightButton}"
-    Width="150">
-                                    حفظ
-                                </Button>
-                            </StackPanel>
-                        </Expander>
-                    </materialDesign:Card>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-        <Button Name="Add"  Click="Add_Click" Margin="40" Background="#111834" Style="{StaticResource MaterialDesignFloatingActionDarkButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <materialDesign:PackIcon Kind="Add"  Height="24" Width="24" Foreground="#d47e7d" />
-        </Button>
+                                <TextBox IsReadOnly="True" Text="{Binding Mname}"  Grid.Column="0" Margin=" 8"
+  materialDesign:HintAssist.Hint="اسم المادة"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                <TextBox IsReadOnly="True" Text="{Binding amount}"  Grid.Column="1" Margin=" 8"
+  materialDesign:HintAssist.Hint="الكمية"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackPanel>
+        </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>

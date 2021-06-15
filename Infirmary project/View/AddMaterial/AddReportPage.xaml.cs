@@ -18,15 +18,29 @@ namespace Infirmary_project.View.AddMaterial {
     /// Interaction logic for AddReportPage.xaml
     /// </summary>
     public partial class AddReportPage : UserControl {
-        List<string> itemControlList = new List<string> { "Test", "Test" };
+        List<InnerClass> itemList = new List<InnerClass>();
+        List<string> comboList = new List<string> { "Test", "Test2" };
         public AddReportPage() {
             InitializeComponent();
-            ItemControlMatrial.ItemsSource = itemControlList;
+            MListView.ItemsSource = itemList;
+            Mname.ItemsSource = comboList;
         }
         private void Add_Click(object sender, RoutedEventArgs e) {
-            itemControlList.Add(" ");
-            ItemControlMatrial.ItemsSource = null;
-            ItemControlMatrial.ItemsSource = itemControlList;
+
+        }
+        class InnerClass {
+            public string Mname { get; set; }
+            public string amount { get; set; }
+        }
+
+        private void addMat_Click(object sender, RoutedEventArgs e) {
+            itemList.Add(new InnerClass {
+                amount = amountText.Text,
+                Mname = Mname.SelectedItem.ToString()
+            });
+            MListView.ItemsSource = null;
+            MListView.ItemsSource = itemList;
         }
     }
+    
 }

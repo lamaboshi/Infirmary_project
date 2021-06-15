@@ -4,70 +4,64 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Infirmary_project.View.AddMaterial" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition />
-            <RowDefinition Height="auto"/>
-        </Grid.RowDefinitions>
-        <StackPanel Margin="8" Orientation="Horizontal" Grid.Row="0">
-            <TextBox Width="200"
-  materialDesign:HintAssist.Hint="اسم الشخص" HorizontalAlignment="Left" Margin="25 0 0 0"
+             mc:Ignorable="d" >
+    <Grid Margin="10" Height="400" Width="450">
+        <ScrollViewer>
+        <StackPanel>
+            <ComboBox 
+  materialDesign:HintAssist.Hint="اسم الدور" Width="200" HorizontalAlignment="Right">
+            </ComboBox>
+            <Grid Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox Name="Mname"
+  materialDesign:HintAssist.Hint="اسم الشخص"
+Grid.Column="0" Margin="15 8"
+  VerticalAlignment="Bottom">
+                </ComboBox>
+                <TextBox Name="amountText" Grid.Column="1" Margin="15 8"
+  materialDesign:HintAssist.Hint="الكمية"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-            <TextBox Width="80"
-  materialDesign:HintAssist.Hint=" الكمية" HorizontalAlignment="Left" Margin="20 0 0 0"
+                <Button Name="addMat" Click="addMat_Click" Grid.Column="2" Margin="8" Background="#d47e7d"
+  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+  ToolTip="MaterialDesignFloatingActionMiniLightButton">
+                    <materialDesign:PackIcon
+    Kind="Add"
+                            Foreground="White"
+    Height="24"
+    Width="24" />
+                </Button>
+            </Grid>
+
+            <ListView Name="MListView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Focusable" Value="false"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="8" Width="400">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox IsReadOnly="True" Text="{Binding Mname}"  Grid.Column="0" Margin=" 8"
+  materialDesign:HintAssist.Hint="اسم الشخص"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <TextBox IsReadOnly="True" Text="{Binding amount}"  Grid.Column="1" Margin=" 8"
+  materialDesign:HintAssist.Hint="الكمية"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
         </StackPanel>
-        <Button Grid.Row="0"  Grid.Column="1" Height="30" Width="30" Margin="8" VerticalAlignment="Top" HorizontalAlignment="Right"
-  Style="{StaticResource MaterialDesignFloatingActionLightButton}" Background="#111834"
-  ToolTip="MaterialDesignFloatingActionLightButton">
-            <materialDesign:PackIcon Kind="Add" HorizontalAlignment="Center" VerticalAlignment="Center"
-            Height="20" Foreground=" #d47e7d"
-    Width="20" />
-        </Button>
-        <DataGrid  Name="DataDialog"   Grid.Row="1" 
-                  EnableColumnVirtualization="True"
-                  EnableRowVirtualization="True"
-                  FontSize="14"
-                  IsReadOnly="True"
-                  BorderThickness="1"
-                  SelectionMode="Single"
-                  SelectionUnit="FullRow"
-                  ScrollViewer.CanContentScroll="True"
-                  CanUserSortColumns="True"
-                  CanUserAddRows="False"
-                  AutoGenerateColumns="False"
-                  HorizontalScrollBarVisibility="Disabled"
-                  materialDesign:DataGridAssist.CellPadding="13 8 8 8"
-                  materialDesign:DataGridAssist.ColumnHeaderPadding="8" >
-            <DataGrid.Columns>
-                <materialDesign:DataGridTextColumn Header="اسم الشخص" Width="155"  >
-                    <DataGridTextColumn.HeaderStyle >
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="HorizontalContentAlignment"
-                                      Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                </materialDesign:DataGridTextColumn>
-                <materialDesign:DataGridTextColumn Header="الكمية" Width="155">
-                    <DataGridTextColumn.HeaderStyle >
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="HorizontalContentAlignment"
-                                      Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                </materialDesign:DataGridTextColumn>
-            </DataGrid.Columns>
-
-            <DataGrid.Resources>
-                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="#F7EDEDED" />
-                </Style>
-            </DataGrid.Resources>
-        </DataGrid>
-        <Button Grid.Row="2" Content="حفظ" Width="150" Margin="0 10 0 0" Background=" #d47e7d" BorderBrush=" #d47e7d" ></Button>
+        </ScrollViewer>
     </Grid>
 </UserControl>

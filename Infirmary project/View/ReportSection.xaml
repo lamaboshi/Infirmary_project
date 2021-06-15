@@ -3,44 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Infirmary_project.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Infirmary_project.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:addmaterial="clr-namespace:Infirmary_project.View.AddMaterial"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Button x:Name="Addreport" Click="Addreport_Click" Grid.Row="0"  Background="#d47e7d" HorizontalAlignment="Left" VerticalAlignment="Bottom" FlowDirection="LeftToRight"
+    <materialDesign:DialogHost Name="AddRport" IsOpen="False"  CloseOnClickAway="True"
+    Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
+  DialogMargin="8" >
+        <materialDesign:DialogHost.DialogContent>
+            <addmaterial:AddReportPage/>
+        </materialDesign:DialogHost.DialogContent>
+        <materialDesign:DialogHost Name="Addper" IsOpen="False"  CloseOnClickAway="True"
+    Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
+  DialogMargin="8" >
+            <materialDesign:DialogHost.DialogContent>
+                <addmaterial:Add_prescription/>
+            </materialDesign:DialogHost.DialogContent>
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button x:Name="Addreport" Click="Addreport_Click" Grid.Row="0"  Background="#d47e7d" HorizontalAlignment="Left" VerticalAlignment="Bottom" FlowDirection="LeftToRight"
   Style="{StaticResource MaterialDesignFloatingActionButton}" 
   ToolTip="MaterialDesignFloatingActionButton" Margin="15 20 30 20"  >
-            <materialDesign:PackIcon
+                <materialDesign:PackIcon
     Kind="Add" Width="40" Height="30"
     />
-        </Button>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <Label Content="صادرات" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-                <materialDesign:ColorZone Margin="15 10 15 20" Height="480"
+            </Button>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Label Content="صادرات" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                    <materialDesign:ColorZone Margin="15 10 15 20" Height="480"
       materialDesign:ShadowAssist.ShadowDepth="Depth3"  materialDesign:ShadowAssist.ShadowEdges="Bottom,Left,Right,Top"
      BorderBrush="LightGray"  CornerRadius="30" Background="White" BorderThickness="1">
 
-                </materialDesign:ColorZone>
+                    </materialDesign:ColorZone>
 
-            </StackPanel>
-            <StackPanel Grid.Column="1">
-                <Label Content="واردات" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
-                <materialDesign:ColorZone Margin="15 10 15 20" Height="480"
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Label Content="واردات" FontWeight="Bold" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+                    <materialDesign:ColorZone Margin="15 10 15 20" Height="480"
       materialDesign:ShadowAssist.ShadowDepth="Depth3"  materialDesign:ShadowAssist.ShadowEdges="Bottom,Left,Right,Top"
      BorderBrush="LightGray"  CornerRadius="30" Background="White" BorderThickness="1">
 
-                </materialDesign:ColorZone>
+                    </materialDesign:ColorZone>
 
-            </StackPanel>
+                </StackPanel>
+            </Grid>
         </Grid>
-    </Grid>
+    </materialDesign:DialogHost>
+    </materialDesign:DialogHost>
 </UserControl>

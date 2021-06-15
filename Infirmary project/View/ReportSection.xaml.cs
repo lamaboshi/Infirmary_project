@@ -26,7 +26,8 @@ namespace Infirmary_project.View {
         }
 
         private void Addreport_Click(object sender, RoutedEventArgs e) {
-            control.Content = HomePage.addAllMatrial = new AddAllMatrial(false);
+            //AddRport.IsOpen = true;
+            Addper.IsOpen = true;
         }
     }
 }
