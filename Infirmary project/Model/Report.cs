@@ -10,8 +10,9 @@ namespace Infirmary_project.Model
     {
         public int Id { set; get; }
         public string Type { set; get; }
-        public int Amount { set; get; }
         public DateTime Date { set; get; }
         ICollection<ReportMaterial> ReportMaterial { set; get; }
+        public int IdPerson { set; get; }
+        public Person Person { set; get; }
     }
 }

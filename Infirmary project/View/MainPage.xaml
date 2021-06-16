@@ -12,16 +12,10 @@
         <materialDesign:DialogHost.DialogContent>
 
             <Grid Height="200" Width="300">
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <ToggleButton Grid.Column="0" Foreground="#111834" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 15 0 0" IsChecked="False"
+                <StackPanel Orientation="Vertical">
+                   
+               
+                <!--<ToggleButton Grid.Column="0" Foreground="#111834" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 15 0 0" IsChecked="False"
   Style="{StaticResource MaterialDesignSwitchLightToggleButton}"
   ToolTip="MaterialDesignSwitchLightToggleButton"
   />
@@ -64,8 +58,34 @@
                     <CheckBox IsChecked="False">
                         نوع الوظيفة
                     </CheckBox>
+                </StackPanel>-->
+                <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0 20 0 0">
+                <Label Grid.Row="0" Grid.Column=" 0 " Content="النوع:" Margin="40 0  0  0"></Label>
+                        <ComboBox Name="Kind" IsEditable="True" Grid.Column="1" Grid.Row="0"  Text="اختيار النوع" DropDownClosed="Kind_DropDownClosed" Margin="70 -35 0 0" Width="140" Foreground="White">
+                        </ComboBox>
                 </StackPanel>
-                <Button Content="موافق" Name="close" Click="Close_Click" Background="#d47e7d" BorderBrush="#d47e7d" Width="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="0 0 0 10"></Button>
+                    <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0 10 0 0">
+                        <Label Grid.Row="0" Grid.Column=" 0 " Name="txt" Content="نوع الوظيفة:"  Margin="40 0  0  0"></Label>
+                        <ComboBox  IsEditable="True" Grid.Column="1" Grid.Row="0" Name="Emp"  Text="اختيار النوع"  Foreground="White" Margin="70 -35 0 0" Width="140">
+                        </ComboBox>
+                        <ComboBox Grid.Column="1"  IsEditable="True" Grid.Row="0" Visibility="Collapsed" Name="Cus" Text="اختيار النوع" Margin="70 -35 0 0" Width="140">
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0 10 0 0">
+                        <Label Grid.Row="0" Grid.Column=" 0 "  Content="مجال التاريخ:"  Margin="40 0  0  0"></Label>
+                        <DatePicker Grid.Column="1" Grid.Row="0"   Text="اختيار النوع" Margin="70 -35 0 0" Width="140">
+                        </DatePicker>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0 10 0 0">
+                        <CheckBox IsChecked="False" Margin="60 0 0 0">
+                            ذكور
+                        </CheckBox>
+                        <CheckBox IsChecked="False" Margin="70 0 0 0">
+                            إناث
+                        </CheckBox>
+                    </StackPanel>
+                    <Button Content="موافق" Name="close" Click="Close_Click" Background="#d47e7d" BorderBrush="#d47e7d" Width="100" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="0 15 0 0"></Button>
+                </StackPanel>
             </Grid>
 
         </materialDesign:DialogHost.DialogContent>

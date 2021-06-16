@@ -29,6 +29,7 @@ namespace Infirmary_project.View
         {
             InitializeComponent();
             content = HomePage.contentHold;
+            FillCompo();
             initializData();
         }
         void initializData() {
@@ -58,6 +59,33 @@ namespace Infirmary_project.View
 
         private void ShowPerson_Click(object sender, RoutedEventArgs e) {
             content.Content = HomePage.presonPage = new PresonPage();
+        }
+        public void FillCompo()
+        {
+            Kind.Items.Add("موظف");
+            Kind.Items.Add("نزيل");
+            Emp.Items.Add("سكرتاريا");
+            Emp.Items.Add("ممرض");
+            Emp.Items.Add("عامل نظافة");
+            Cus.Items.Add("الحاليين");
+            Cus.Items.Add("المغادرين");
+            Cus.Items.Add("المتوفيين");
+        }
+
+        private void Kind_DropDownClosed(object sender, EventArgs e)
+        {
+          if(Kind.SelectedItem.ToString()== "موظف")
+            {
+                txt.Content = "نوع الوظيفة:";
+                Emp.Visibility = Visibility.Collapsed;
+                Cus.Visibility = Visibility.Hidden;
+            }
+            else if(Kind.SelectedItem.ToString() == "نزيل")
+            {
+                txt.Content = "نوع النزيل:";
+                Emp.Visibility = Visibility.Hidden;
+                Cus.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

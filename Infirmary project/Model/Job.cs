@@ -11,6 +11,7 @@ namespace Infirmary_project.Model
     {
         public int Id { set; get; }
         public string Name { set; get; }
+        public int Salary { set; get; }
         ICollection<PersonJob> PersonJob { set; get; }
     }
 }

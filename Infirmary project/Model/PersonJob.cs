@@ -9,7 +9,7 @@ namespace Infirmary_project.Model
    public class PersonJob
     {
         public  int Id { set; get; }
-        public int Salary { set; get; }
+        public int FinSalary { set; get; }
         public DateTime Date { set; get; }
         public int IdPerson { set; get; }
         public Person Person { set; get; }
