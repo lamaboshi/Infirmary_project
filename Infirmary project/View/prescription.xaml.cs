@@ -22,8 +22,7 @@ namespace Infirmary_project
     /// </summary>
     public partial class prescription : UserControl
     {
-        List<String> itemcontrollist = new List<string> { "Asia" };
-        List<String> itemcontrollist1 = new List<string> { "Asia" };
+        List<String> itemcontrollist = new List<string> { "lama", "ASia", "DAna", "add", "Sur", "Daaa", "asad", "hamza" };
         private ContentControl content;
         public prescription()
         { 
@@ -31,22 +30,19 @@ namespace Infirmary_project
             InitializeComponent();
             content = HomePage.contentHold;
             ItemControlMatrial.ItemsSource = itemcontrollist;
-            ItemControlMatrial2.ItemsSource = itemcontrollist1;
+            //   ItemControlMatrial2.ItemsSource = itemcontrollist1;
         }
 
-        private void ADD_Click(object sender, RoutedEventArgs e)
-        {
+        private void Ad1_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
             Host.IsOpen = true;
-
         }
 
-        private void Save_Click(object sender, RoutedEventArgs e)
-        {
+        private void Save_Click(object sender, RoutedEventArgs e) {
             Host.IsOpen = false;
         }
 
-        private void midc_Click(object sender, RoutedEventArgs e) {
-            content.Content = HomePage.addAllMatrial = new AddAllMatrial(true);
+        private void Ad1_PreviewMouseDown_1(object sender, MouseButtonEventArgs e) {
+            Host.IsOpen = true;
         }
     }
 }

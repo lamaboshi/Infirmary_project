@@ -8,7 +8,7 @@
     <Grid Margin="10" Height="400" Width="450">
         <ScrollViewer>
         <StackPanel>
-            <ComboBox 
+            <ComboBox  Margin="8"
   materialDesign:HintAssist.Hint="اسم الدور" Width="200" HorizontalAlignment="Right">
             </ComboBox>
             <Grid Margin="8">
