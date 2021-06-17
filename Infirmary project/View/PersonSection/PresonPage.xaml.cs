@@ -43,11 +43,12 @@ namespace Infirmary_project.View {
 
         private void changePanel_Click(object sender, RoutedEventArgs e) {
             isEmployee = !isEmployee;
-            if (isEmployee) { TransitioningContentControl.Content = employeeSection ; } else { TransitioningContentControl.Content = guestSection; }
+            if (isEmployee) { TransitioningContentControl.Content = employeeSection; HomePage.NamePage.Text = "اضافة موظف"; } else { TransitioningContentControl.Content = guestSection; HomePage.NamePage.Text = "اضافة نزيل"; }
         }
 
         private void health_Click(object sender, RoutedEventArgs e) {
             control.Content = HomePage.prescription = new prescription();
+
 
         }
     }

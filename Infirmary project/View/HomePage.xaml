@@ -28,7 +28,7 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock  HorizontalAlignment="Left" Text="رئيسية" Foreground="White" FontSize="24" Margin="10 0 0 0"></TextBlock>
+                <TextBlock Name="nameText"  HorizontalAlignment="Left" Text="رئيسية" Foreground="White" FontSize="24" Margin="10 0 0 0"></TextBlock>
                 <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
                     <Button x:Name="report" Click="report_Click" ToolTip="تقارير" HorizontalAlignment="Right" VerticalAlignment="Center"  Margin="10 0" Grid.Column="1"
     Style="{StaticResource MaterialDesignFlatButton}">

@@ -40,8 +40,75 @@
                     <materialDesign:ColorZone Margin="15 10 15 20" Height="480"
       materialDesign:ShadowAssist.ShadowDepth="Depth3"  materialDesign:ShadowAssist.ShadowEdges="Bottom,Left,Right,Top"
      BorderBrush="LightGray"  CornerRadius="30" Background="White" BorderThickness="1">
+                            <ScrollViewer  VerticalScrollBarVisibility="Auto"  Margin="8">
+                                <ItemsControl Name="ListViewPerson"    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate  >
+                                        <Expander Background="Transparent" Width="700" Header="{Binding  name}">
+                                            <Grid   Margin="5">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Grid Grid.Row="0">
+                                                    <StackPanel >
+                                                        <Grid Margin="12">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBox Grid.Column="0" Margin="5" IsReadOnly="True"
+  materialDesign:HintAssist.Hint="تاريخ" Text="{Binding date}"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                                                <TextBox Grid.Column="1" Margin="5" IsReadOnly="True"
+  materialDesign:HintAssist.Hint="اسم موظف" Text="{Binding empName}"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                                        </Grid>
 
-                    </materialDesign:ColorZone>
+                                                    </StackPanel>
+                                                </Grid>
+                                                <ScrollViewer  Grid.Row="1">
+                                                    <Grid>
+
+                                                        <ListView ItemsSource="{Binding innerClasses}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                                            <ListView.ItemContainerStyle>
+                                                                <Style TargetType="ListViewItem">
+                                                                    <Setter Property="Focusable" Value="false"/>
+                                                                </Style>
+                                                            </ListView.ItemContainerStyle>
+                                                            <ListView.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid Margin="8" Width="500">
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+
+                                                                        <TextBox IsReadOnly="True" Text="{Binding Mname}"  Grid.Column="0" Margin=" 8"
+  materialDesign:HintAssist.Hint="اسم المادة"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                                                        <TextBox IsReadOnly="True" Text="{Binding amount}"  Grid.Column="1" Margin=" 8"
+  materialDesign:HintAssist.Hint="الكمية"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                                                    </Grid>
+                                                                </DataTemplate>
+                                                            </ListView.ItemTemplate>
+                                                        </ListView>
+                                                    </Grid>
+                                                </ScrollViewer>
+                                            </Grid>
+                                        </Expander>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel ></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+</ScrollViewer>
+
+                        </materialDesign:ColorZone>
 
                 </StackPanel>
                 <StackPanel Grid.Column="1">
@@ -49,8 +116,75 @@
                     <materialDesign:ColorZone Margin="15 10 15 20" Height="480"
       materialDesign:ShadowAssist.ShadowDepth="Depth3"  materialDesign:ShadowAssist.ShadowEdges="Bottom,Left,Right,Top"
      BorderBrush="LightGray"  CornerRadius="30" Background="White" BorderThickness="1">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="8">
+                        <ItemsControl Name="ListViewPerson1"    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate  >
+                                        <Expander Background="Transparent" Width="700"
+    Header="{Binding  name}">
+                                            <Grid   Margin="5">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Grid Grid.Row="0">
+                                                    <StackPanel >
+                                                        <Grid Margin="12">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                            </Grid.ColumnDefinitions>
+                                                                <TextBox Grid.Column="0" IsReadOnly="True" Margin="5"
+  materialDesign:HintAssist.Hint="تاريخ" Text="{Binding date}"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                                                <TextBox Grid.Column="1" IsReadOnly="True" Margin="5"
+  materialDesign:HintAssist.Hint="اسم موظف" Text="{Binding empName}"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                                        </Grid>
 
-                    </materialDesign:ColorZone>
+                                                    </StackPanel>
+                                                </Grid>
+                                                <ScrollViewer  Grid.Row="1">
+                                                    <Grid>
+
+                                                        <ListView ItemsSource="{Binding innerClasses}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                                            <ListView.ItemContainerStyle>
+                                                                <Style TargetType="ListViewItem">
+                                                                    <Setter Property="Focusable" Value="false"/>
+                                                                </Style>
+                                                            </ListView.ItemContainerStyle>
+                                                            <ListView.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <Grid Margin="8" Width="500">
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition/>
+                                                                            <ColumnDefinition/>
+                                                                        </Grid.ColumnDefinitions>
+
+                                                                        <TextBox IsReadOnly="True" Text="{Binding Mname}"  Grid.Column="0" Margin=" 8"
+  materialDesign:HintAssist.Hint="اسم المادة"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                                                        <TextBox IsReadOnly="True" Text="{Binding amount}"  Grid.Column="1" Margin=" 8"
+  materialDesign:HintAssist.Hint="الكمية"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                                                    </Grid>
+                                                                </DataTemplate>
+                                                            </ListView.ItemTemplate>
+                                                        </ListView>
+                                                    </Grid>
+                                                </ScrollViewer>
+                                            </Grid>
+                                        </Expander>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel ></WrapPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                            </ScrollViewer>
+                        </materialDesign:ColorZone>
 
                 </StackPanel>
             </Grid>

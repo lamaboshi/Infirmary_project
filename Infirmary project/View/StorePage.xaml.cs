@@ -23,10 +23,11 @@ namespace Infirmary_project.View {
         public StorePage() {
             InitializeComponent();
             control = HomePage.contentHold;
+            HomePage.NamePage.Text = "مستودع";
         }
 
         private void addreport_Click(object sender, RoutedEventArgs e) {
-            control.Content = HomePage.addAllMatrial = new AddAllMatrial(false);
+            AddRport.IsOpen = true;
         }
     }
 }

@@ -12,35 +12,14 @@
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition  Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <materialDesign:ColorZone
-                Grid.Row="0"
-                Mode="PrimaryDark"
-            Background=" #111834"
-                Padding="4"
-                CornerRadius="3"
-                materialDesign:ShadowAssist.ShadowDepth="Depth3">
-            <Grid Margin="4">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <TextBlock  Name="text" HorizontalAlignment="Left" Text="رئيسية" FontSize="24" Margin="10 0 0 0"></TextBlock>
-                <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
-                    <materialDesign:PackIcon Kind="ServerNetwork"  Margin="10 0 10 0" Foreground="White" Grid.Column="1" Height="28" Width="28" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <materialDesign:PackIcon Kind="Search" Margin="10 0 10 0" Foreground="White" Grid.Column="1" Height="28" Width="28" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                    <materialDesign:PackIcon Kind="AccountCircleOutline" Margin="10 0 10 0" Foreground="White" Grid.Column="1" Height="28" Width="28" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Grid>
-        </materialDesign:ColorZone>
-        <Grid Grid.Row="1">
-            <ContentControl Name="Content" x:FieldModifier="public"></ContentControl>        
-    </Grid>
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0 10 0 0">
+            <Label Grid.Row="0" Grid.Column=" 0 "  Content="مجال التاريخ:"  Margin="40 0  0  0"></Label>
+           
+            <DatePicker Grid.Column="1" Grid.Row="0"   Text="اختيار النوع" Margin="70 -35 0 0" Width="140">
+            </DatePicker>
+            <DatePicker Grid.Column="0" Grid.Row="0"   Text="اختيار النوع" Margin="70 -35 0 0" Width="140">
+            </DatePicker>
+        </StackPanel>
     </Grid>
 
 </Window>

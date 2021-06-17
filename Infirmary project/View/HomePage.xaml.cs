@@ -25,11 +25,13 @@ namespace Infirmary_project.View {
         public static AddAllMatrial addAllMatrial;
         public static ReportSection reportSection;
         public static StorePage storePage;
+        public static TextBlock NamePage;
         public HomePage() {
             InitializeComponent();
             contentHold = controlcontent;
             mainPage = new MainPage();
             contentHold.Content = mainPage;
+            NamePage = nameText;
         }
 
         private void report_Click(object sender, RoutedEventArgs e) {
@@ -40,11 +42,13 @@ namespace Infirmary_project.View {
         private void box_Click(object sender, RoutedEventArgs e) {
             storePage = new StorePage();
             contentHold.Content = storePage;
+
         }
 
         private void main_Click(object sender, RoutedEventArgs e) {
             if (contentHold.Content != mainPage)
                 contentHold.Content = mainPage;
+            NamePage.Text = "رئيسية";
         }
     }
 }

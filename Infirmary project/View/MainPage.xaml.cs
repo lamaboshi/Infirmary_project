@@ -30,6 +30,7 @@ namespace Infirmary_project.View
             InitializeComponent();
             content = HomePage.contentHold;
             FillCompo();
+        //  HomePage.NamePage.Text = "رئيسية";
             initializData();
         }
         void initializData() {
@@ -77,14 +78,14 @@ namespace Infirmary_project.View
           if(Kind.SelectedItem.ToString()== "موظف")
             {
                 txt.Content = "نوع الوظيفة:";
-                Emp.Visibility = Visibility.Collapsed;
+                Emp.Visibility = Visibility.Visible;
                 Cus.Visibility = Visibility.Hidden;
             }
             else if(Kind.SelectedItem.ToString() == "نزيل")
             {
                 txt.Content = "نوع النزيل:";
                 Emp.Visibility = Visibility.Hidden;
-                Cus.Visibility = Visibility.Collapsed;
+                Cus.Visibility = Visibility.Visible;
             }
         }
     }

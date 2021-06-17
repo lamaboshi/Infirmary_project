@@ -4,36 +4,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Infirmary_project"
+             xmlns:local="clr-namespace:Infirmary_project" xmlns:addmaterial="clr-namespace:Infirmary_project.View.AddMaterial"
              mc:Ignorable="d"  Background="White"  FlowDirection="RightToLeft" 
              d:DesignHeight="450" d:DesignWidth="800">
     <materialDesign:DialogHost Name="Host" IsOpen="False"  CloseOnClickAway="True"
 
     Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
-  DialogMargin="8" Margin="-2,0,2,0">
+  DialogMargin="8" >
         <materialDesign:DialogHost.DialogContent>
-            <Grid Background="White" Width="400" Height="200">
+            <Grid Margin="8" Background="White" Width="400"  Height="250">
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="اسم المرض :" Margin="10,10,40,25"></TextBlock>
-                <TextBox Grid.Row="0" Margin="98,0,0,39" Grid.ColumnSpan="2" />
-                <materialDesign:Card Grid.Column="2"
-  Background="#d47e7d"
-  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
-  Padding="8" Margin="10,10,89,25">
-                    <materialDesign:PackIcon
-    Kind="Add" Width="Auto" Height="Auto" Foreground="White" Margin="-30,0,-26,-6" VerticalAlignment="Stretch" RenderTransformOrigin="0.489,0.571" HorizontalAlignment="Stretch"
-    />
-                </materialDesign:Card>
-                <DataGrid  Name="TypeShow"   HorizontalAlignment="Center"
+                <Grid Grid.Row="0">
+                    <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
+                        <TextBox Grid.Row="0" Width="200"  Margin=" 8" 
+  materialDesign:HintAssist.Hint="اسم المرض"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <Button Name="healthName"  Grid.Column="2" Margin="8" Background="#d47e7d"
+  Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+  ToolTip="MaterialDesignFloatingActionMiniLightButton">
+                            <materialDesign:PackIcon
+    Kind="Add"
+                            Foreground="White"
+    Height="24"
+    Width="24" />
+                        </Button>
+                    </StackPanel>
+                    
+                </Grid>
+ 
+                <DataGrid Grid.Row="1"  Margin="5" Name="TypeShow"   HorizontalAlignment="Center"
                   EnableColumnVirtualization="True"
                   EnableRowVirtualization="True"
                   HorizontalScrollBarVisibility="Disabled"
@@ -47,7 +50,7 @@
                   CanUserAddRows="False"
                   AutoGenerateColumns="False"
                   materialDesign:DataGridAssist.CellPadding="13 8 8 8"
-                  materialDesign:DataGridAssist.ColumnHeaderPadding="8" Width="297" Grid.ColumnSpan="3" Margin="47,47,56,44" Grid.RowSpan="3" >
+                  materialDesign:DataGridAssist.ColumnHeaderPadding="8"  Grid.ColumnSpan="3"  >
                     <DataGrid.Columns>
                         <materialDesign:DataGridTextColumn Header="اسم المرض" Width="100" Binding="{Binding Name}" >
                             <DataGridTextColumn.HeaderStyle >
@@ -71,42 +74,67 @@
                         </Style>
                     </DataGrid.Resources>
                 </DataGrid>
-                <Button Margin="37,28,40,10"   Grid.Column="2" Grid.Row="2"
-                                ToolTip="حفظ"  Height="Auto" Padding="0" Content="حفظ" FontSize="9" Background="#111834"    BorderThickness="0"  />
+                <Button    Grid.Row="2" Margin="8" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                ToolTip="حفظ"  Height="Auto"  Content="حفظ" FontSize="9" Background="#111834"    BorderThickness="0"  />
             </Grid>
         </materialDesign:DialogHost.DialogContent>
-        <Grid Height="419" VerticalAlignment="Bottom">
+        <materialDesign:DialogHost Name="AddRport" IsOpen="False"  CloseOnClickAway="True"
+    Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
+  DialogMargin="8" >
+            <materialDesign:DialogHost.DialogContent>
+                <addmaterial:AddReportPage/>
+            </materialDesign:DialogHost.DialogContent>
+            <Grid>
+        <Grid  >
             <Grid.RowDefinitions>
-                <RowDefinition />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                 <RowDefinition/>
             </Grid.RowDefinitions>
+                <Button  Name="addM"  Click="addM_Click" Grid.Row="0" Margin="8" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                ToolTip="حفظ"   Content="اضافة مرض" FontSize="9" Background="#111834"    BorderThickness="0"  />
+            <Grid Grid.Row="1" Margin="20" >
+                <ScrollViewer Foreground="Gray"  VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Auto"  >
+                    <ItemsControl Margin="8" Name="ItemControlMatrial" >
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                    <materialDesign:Card Margin="10"
+                                        
+  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+  Width="200"
+  Padding="8"
+  UniformCornerRadius="6">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" FontSize="18" Text="{Binding name}" Foreground="Black"/>
+                                            <ComboBox  Grid.Row="1" FontSize="18" Foreground="Black" IsReadOnly="True" ItemsSource="{Binding mylist}"
+  MinWidth="100"
+  Margin="10"
+  VerticalAlignment="Bottom">
+                                            </ComboBox>
+                                        </Grid>
+                                    </materialDesign:Card>
 
-            <Grid Grid.Row="0" Margin="52,0,10,0" >
-                <ScrollViewer Foreground="Gray" Margin="10,0,0,0" HorizontalAlignment="Left" Width="735"  >
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <ItemsControl Name="ItemControlMatrial"  Grid.Column="0"  Margin="8,10,10,10" Grid.ColumnSpan="2">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal"/>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Expander FlowDirection="RightToLeft" Margin="15"
+
+                                    <!--<Expander FlowDirection="RightToLeft" Margin="15"
     Header="سكري" Foreground="#111834" FontSize="22" >
-                                        <StackPanel
+                                    <StackPanel
       Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
-                                            <ListView  Name="ListView1" Foreground="#111834" >
-                                                <ListViewItem Content="Asprin"></ListViewItem>
-                                                <ListViewItem Content="Dobran"></ListViewItem>
-                                                <ListViewItem Content="Ansolin"></ListViewItem>
-                                                <ListViewItem Content="Sitackodaan"></ListViewItem>
-                                            </ListView>
-                                            <!--<StackPanel Orientation="Horizontal">
+                                        <ListView  Name="ListView1" Foreground="#111834" >
+                                            <ListViewItem Content="Asprin"></ListViewItem>
+                                            <ListViewItem Content="Dobran"></ListViewItem>
+                                            <ListViewItem Content="Ansolin"></ListViewItem>
+                                            <ListViewItem Content="Sitackodaan"></ListViewItem>
+                                        </ListView>
+                                        --><!--<StackPanel Orientation="Horizontal">
                                                 <Button  Name="ADD"  Background="#d47e7d" Click="ADD_Click"
   Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
   HorizontalAlignment="Left" Width="20" Height="20"
@@ -117,44 +145,16 @@
    />
                                                 </Button>
                                                 <TextBlock Margin="5" FontSize="8" Text="اضافه مرض"></TextBlock>
-                                            </StackPanel>-->
-                                        </StackPanel>
-                                    </Expander>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-
-                        <!--<ItemsControl Name="ItemControlMatrial2"  Grid.Column="1" Margin="8">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel/>
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <Expander FlowDirection="RightToLeft" Margin="10"
-    Header="ضغط" Foreground="#111834" FontSize="22" >
-                                        <StackPanel
-      Orientation="Vertical"
-      TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
-
-                                            <ListView  Name="ListView1" >
-                                                <ListViewItem Content="Dobran"></ListViewItem>
-                                                <ListViewItem Content="Seetamol"></ListViewItem>
-                                                <ListViewItem Content="Brofin"></ListViewItem>
-
-                                            </ListView>
-
-                                        </StackPanel>
-                                    </Expander>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>-->
-                    </Grid>
+                                            </StackPanel>--><!--
+                                    </StackPanel>
+                                </Expander>-->
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
 
                 </ScrollViewer>
             </Grid>
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="2">
                 <DataGrid  Name="mdd"   FlowDirection="RightToLeft"
                   EnableColumnVirtualization="True"
                   EnableRowVirtualization="True"
@@ -169,9 +169,9 @@
                   CanUserAddRows="False" 
                   AutoGenerateColumns="False"
                   materialDesign:DataGridAssist.CellPadding="13 8 8 8"
-                  materialDesign:DataGridAssist.ColumnHeaderPadding="8" Margin="67,6,52,33"  >
+                  materialDesign:DataGridAssist.ColumnHeaderPadding="8"  >
                     <DataGrid.Columns>
-                        <materialDesign:DataGridTextColumn Header="اسم المرض" Width="200" Binding="{Binding SportName}" >
+                        <materialDesign:DataGridTextColumn Header="اسم المرض" Width="*" Binding="{Binding nameM}" >
 
                             <DataGridTextColumn.HeaderStyle >
                                 <Style TargetType="DataGridColumnHeader">
@@ -180,7 +180,7 @@
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
                         </materialDesign:DataGridTextColumn>
-                        <materialDesign:DataGridTextColumn Header="اسم الدواء" Width="200" Binding="{Binding SportName}" >
+                            <materialDesign:DataGridTextColumn Header="اسم الدواء" Width="*" Binding="{Binding nameH}" >
 
                             <DataGridTextColumn.HeaderStyle >
                                 <Style TargetType="DataGridColumnHeader">
@@ -189,7 +189,7 @@
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
                         </materialDesign:DataGridTextColumn>
-                        <materialDesign:DataGridTextColumn Header="الكمية" Width="120" Binding="{Binding SportName}" >
+                        <materialDesign:DataGridTextColumn Header="الكمية" Width="*" Binding="{Binding Amount}" >
                             <DataGridTextColumn.HeaderStyle >
                                 <Style TargetType="DataGridColumnHeader">
                                     <Setter Property="HorizontalContentAlignment"
@@ -197,7 +197,7 @@
                                 </Style>
                             </DataGridTextColumn.HeaderStyle>
                         </materialDesign:DataGridTextColumn>
-                        <materialDesign:DataGridTextColumn Header="التاريخ" Width="150" Binding="{Binding SportName}" >
+                            <materialDesign:DataGridTextColumn Header="التاريخ" Width="*" Binding="{Binding data}" >
 
                             <DataGridTextColumn.HeaderStyle >
                                 <Style TargetType="DataGridColumnHeader">
@@ -207,9 +207,7 @@
                             </DataGridTextColumn.HeaderStyle>
                         </materialDesign:DataGridTextColumn>
                         <materialDesign:DataGridTextColumn></materialDesign:DataGridTextColumn>
-                        <DataGridTemplateColumn Width="200">
 
-                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
 
                     <DataGrid.Resources>
@@ -219,15 +217,16 @@
                     </DataGrid.Resources>
                 </DataGrid>
             </Grid>
-            <Button  Grid.Row="1"  Background="#d47e7d" HorizontalAlignment="Right" VerticalAlignment="Bottom" FlowDirection="LeftToRight"
+
+        </Grid>
+            <Button  Name="Add" Click="Add_Click" Grid.Row="1"  Background="#d47e7d" HorizontalAlignment="Right" VerticalAlignment="Bottom" FlowDirection="LeftToRight"
   Style="{StaticResource MaterialDesignFloatingActionButton}" 
-  ToolTip="MaterialDesignFloatingActionButton" Margin="0,0,22,26" Width="54" Height="50"  >
+  ToolTip="اضافة تقرريررر" Margin="15" >
                 <materialDesign:PackIcon
     Kind="Add" Width="40" Height="30"
     />
             </Button>
         </Grid>
-
-
+    </materialDesign:DialogHost>
     </materialDesign:DialogHost>
 </UserControl>

@@ -20,6 +20,7 @@ namespace Infirmary_project.View.PersonSection {
     public partial class employeeSection : UserControl {
         public employeeSection() {
             InitializeComponent();
+            HomePage.NamePage.Text = "اضافة موظف";
         }
     }
 }

@@ -31,7 +31,6 @@ namespace Infirmary_project {
             
             InitializeComponent();
             var g = context.EntrySides.Where(s=> s.Name=="h");
-            Content.Content = page;
         }
 
     }

@@ -23,6 +23,7 @@ namespace Infirmary_project.View.PersonSection {
         Images_Extenstions extenstions=new Images_Extenstions();
         public guestSection() {
             InitializeComponent();
+            HomePage.NamePage.Text = "اضافة نزيل";
         }
 
         private void cardMid_PreviewMouseDown(object sender, MouseButtonEventArgs e) {

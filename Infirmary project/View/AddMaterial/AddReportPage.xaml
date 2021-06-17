@@ -51,18 +51,24 @@ Grid.Column="2" Margin="15 8"
                 <Grid Margin="8">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
-                        <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
-                    <ComboBox Name="Mname"
-  materialDesign:HintAssist.Hint="اسم المادة"
+                        <ComboBox Name="Mname"
+  materialDesign:HintAssist.Hint="نوع المادة"
 Grid.Column="0" Margin="15 8"
   VerticalAlignment="Bottom">
+                        </ComboBox>
+                        <ComboBox 
+  materialDesign:HintAssist.Hint="اسم المادة"
+Grid.Column="1" Margin="15 8"
+  VerticalAlignment="Bottom">
                     </ComboBox>
-                    <TextBox Name="amountText" Grid.Column="1" Margin="15 8"
+                    <TextBox Name="amountText" Grid.Column="2" Margin="15 8"
   materialDesign:HintAssist.Hint="الكمية"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <Button Name="addMat" Click="addMat_Click" Grid.Column="2" Margin="8" Background="#d47e7d"
+                    <Button Name="addMat" Click="addMat_Click" Grid.Column="3" Margin="8" Background="#d47e7d"
   Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
   ToolTip="MaterialDesignFloatingActionMiniLightButton">
                         <materialDesign:PackIcon
