@@ -83,11 +83,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Enum\TypeScrees.cs" />
     <Compile Include="Extenstions\Images_Extenstions.cs" />
     <Compile Include="Migrations\202106150656042_h.cs" />
     <Compile Include="Migrations\202106150656042_h.designer.cs">
       <DependentUpon>202106150656042_h.cs</DependentUpon>
     </Compile>
+    <Compile Include="Seedes\HomePageSeedes.cs" />
+    <Compile Include="Extenstions\ExtensionMethod.cs" />
     <Compile Include="View\AddMaterial\Add prescription.xaml.cs">
       <DependentUpon>Add prescription.xaml</DependentUpon>
     </Compile>

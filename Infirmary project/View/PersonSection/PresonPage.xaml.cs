@@ -1,4 +1,5 @@
-﻿using Infirmary_project.View.PersonSection;
+﻿using Infirmary_project.Enum;
+using Infirmary_project.View.PersonSection;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -25,11 +26,13 @@ namespace Infirmary_project.View {
         private ContentControl control;
         OpenFileDialog of;
         bool isEmployee = false;
-        public PresonPage() {
+          public PresonPage(string type) {
             InitializeComponent();
             TransitioningContentControl.Content = guestSection;
             control = HomePage.contentHold;
-        }
+            open.Content = "اضافة جهة دخول";
+            HomePage.NamePage.Text = "اضافة نزيل";
+             }
 
         private void ChangImage_Click(object sender, RoutedEventArgs e) {
             of = new OpenFileDialog();
@@ -43,13 +46,20 @@ namespace Infirmary_project.View {
 
         private void changePanel_Click(object sender, RoutedEventArgs e) {
             isEmployee = !isEmployee;
-            if (isEmployee) { TransitioningContentControl.Content = employeeSection; HomePage.NamePage.Text = "اضافة موظف"; } else { TransitioningContentControl.Content = guestSection; HomePage.NamePage.Text = "اضافة نزيل"; }
+            if (isEmployee) { TransitioningContentControl.Content = employeeSection; HomePage.NamePage.Text = "اضافة موظف"; open.Content = "اضافة نوع الوظيفة"; } else { TransitioningContentControl.Content = guestSection; HomePage.NamePage.Text = "اضافة نزيل"; open.Content = "اضافة جهة دخول"; }
         }
 
         private void health_Click(object sender, RoutedEventArgs e) {
             control.Content = HomePage.prescription = new prescription();
 
 
+        }
+
+        private void open_Click(object sender, RoutedEventArgs e) {
+            if (isEmployee) {
+                emp.IsOpen = true;
+            } else { entrySide.IsOpen = true; }
+            
         }
     }
 }

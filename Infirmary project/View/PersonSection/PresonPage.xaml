@@ -8,7 +8,71 @@
              mc:Ignorable="d" 
                      FlowDirection="RightToLeft" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <ScrollViewer >
+    <materialDesign:DialogHost Name="entrySide" IsOpen="False"  CloseOnClickAway="True"
+    Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
+  DialogMargin="8" >
+        <materialDesign:DialogHost.DialogContent>
+            <StackPanel>
+                <materialDesign:ColorZone Background="#111834"
+  Padding="16">
+                    <TextBlock Foreground="White" 
+      VerticalAlignment="Center" HorizontalAlignment="Center">
+    اضافة جهة دخول
+                    </TextBlock>
+                </materialDesign:ColorZone>
+                <Grid Margin="8" Width="300">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" Margin="15 8"
+  materialDesign:HintAssist.Hint="اسم جهة الادخال"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox Grid.Column="1" Margin="15 8"
+  materialDesign:HintAssist.Hint="رقم جهة الادخال"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </Grid>
+                <Button  Margin="20" Background="#d47e7d" Foreground="White"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Width="150">
+                   حفظ
+                </Button>
+            </StackPanel>
+
+        </materialDesign:DialogHost.DialogContent>
+        <materialDesign:DialogHost Name="emp" IsOpen="False"  CloseOnClickAway="True"
+    Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
+  DialogMargin="8" >
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel>
+                    <materialDesign:ColorZone Background="#111834"
+  Padding="16">
+                        <TextBlock Foreground="White" Name="title"
+      VerticalAlignment="Center" HorizontalAlignment="Center">
+    اضافة نوع الوظيفة
+                        </TextBlock>
+                    </materialDesign:ColorZone>
+                    <Grid Margin="8" Width="300">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Grid.Column="0" Margin="15 8"
+  materialDesign:HintAssist.Hint="المسمى الوظيفي"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox Grid.Column="1" Margin="15 8"
+  materialDesign:HintAssist.Hint="الراتب"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    </Grid>
+                    <Button  Margin="20" Background="#d47e7d" Foreground="White"
+    Style="{StaticResource MaterialDesignRaisedLightButton}"
+    Width="150">
+                        حفظ
+                    </Button>
+                </StackPanel>
+
+            </materialDesign:DialogHost.DialogContent>
+            <ScrollViewer >
     <Grid Background="White" >
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -27,18 +91,36 @@
                         <TextBlock Text="معلومات الشخص" FontSize="18"/>
 
                     </StackPanel>
-                    <ToggleButton Name="changePanel" Click="changePanel_Click" HorizontalAlignment="Right" Background="#111834"
+                            <StackPanel HorizontalAlignment="Right">
+                                <ToggleButton Name="changePanel" Click="changePanel_Click"  Background="#111834"
   Style="{StaticResource MaterialDesignActionToggleButton}"
-  ToolTip="MaterialDesignActionLightToggleButton">
-                        <ToggleButton.Content>
-                            <materialDesign:PackIcon Foreground="#d47e7d"
+  ToolTip="اختيار نوع الاضافة">
+                                    <ToggleButton.Content>
+                                        <materialDesign:PackIcon Foreground="#d47e7d"
       Kind="AccountCircle " />
-                        </ToggleButton.Content>
-                        <materialDesign:ToggleButtonAssist.OnContent>
-                            <materialDesign:PackIcon Foreground="#d47e7d"
+                                    </ToggleButton.Content>
+                                    <materialDesign:ToggleButtonAssist.OnContent>
+                                        <materialDesign:PackIcon Foreground="#d47e7d"
       Kind=" Briefcase" />
-                        </materialDesign:ToggleButtonAssist.OnContent>
-                    </ToggleButton>
+                                    </materialDesign:ToggleButtonAssist.OnContent>
+                                </ToggleButton>
+                                <ToggleButton   Margin="5"  Background="LightGray"
+  Style="{StaticResource MaterialDesignActionToggleButton}"
+  ToolTip="اختيار الجنس">
+
+                                    <ToggleButton.Content>
+                                        <materialDesign:PackIcon Foreground="Blue" Kind="GenderMale" />
+
+
+                                    </ToggleButton.Content>
+                                    <materialDesign:ToggleButtonAssist.OnContent>
+
+                                            <materialDesign:PackIcon Foreground="#d47e7d" Kind="GenderFemale" />
+
+                                    </materialDesign:ToggleButtonAssist.OnContent>
+                                </ToggleButton>
+                            </StackPanel>
+
                 </Grid>
 
                 <Grid>
@@ -111,7 +193,9 @@ Grid.Column="1" Margin="15 8"
         </Grid>
             <Grid Margin="10" Grid.Row="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Name="health" Click="health_Click" Margin="10" Background="#111834" Foreground="White"
+                        <Button Content="اضافة جهة دخول" Name="open" Click="open_Click" BorderBrush=" #d47e7d" Background="#d47e7d" Width="150" Margin="0 0 10 0" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center"></Button>
+
+                        <Button Name="health" Click="health_Click" Margin="10" Background="#111834" Foreground="White"
     Style="{StaticResource MaterialDesignRaisedLightButton}"
     Width="150"
     ToolTip="اضغط لاضافة الوضع الصحي">
@@ -129,4 +213,6 @@ Grid.Column="1" Margin="15 8"
             </Grid>
         </Grid>
         </ScrollViewer >
+    </materialDesign:DialogHost>
+    </materialDesign:DialogHost>
 </UserControl>

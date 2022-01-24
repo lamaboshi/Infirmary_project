@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Infirmary_project" xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls" xmlns:view="clr-namespace:Infirmary_project.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-         
-
         mc:Ignorable="d"
         FlowDirection="RightToLeft" 
         WindowStartupLocation="CenterScreen"

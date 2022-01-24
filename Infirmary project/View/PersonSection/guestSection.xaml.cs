@@ -21,9 +21,11 @@ namespace Infirmary_project.View.PersonSection {
     /// </summary>
     public partial class guestSection : UserControl {
         Images_Extenstions extenstions=new Images_Extenstions();
+        List<string> typeList = new List<string> { "موتى", "خروج", "دخول" };
         public guestSection() {
             InitializeComponent();
             HomePage.NamePage.Text = "اضافة نزيل";
+            typeP.ItemsSource = typeList;
         }
 
         private void cardMid_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
@@ -32,6 +34,10 @@ namespace Infirmary_project.View.PersonSection {
 
         private void cardRN_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
             rn.Source = extenstions.ImagePicker();
+        }
+
+        private void open_Click(object sender, RoutedEventArgs e) {
+            
         }
     }
 }

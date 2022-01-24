@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Infirmary_project.View.AddMaterial {
     /// </summary>
     public partial class AddReportPage : UserControl {
         List<InnerClass> itemList = new List<InnerClass>();
-        List<string> comboList = new List<string> { "Test", "Test2" };
+        List<string> comboList = new List<string> { "دوا", "Test2" };
         public AddReportPage() {
             InitializeComponent();
             MListView.ItemsSource = itemList;
@@ -34,12 +35,47 @@ namespace Infirmary_project.View.AddMaterial {
         }
 
         private void addMat_Click(object sender, RoutedEventArgs e) {
+            if (Mname.SelectedItem!=null && hold.Content==null) {
+                if (Mname.SelectedItem.ToString() == "دوا") {
+                    Add_prescription prescription = new Add_prescription();
+                    hold.Content = prescription;
+                }
+            }
+
             itemList.Add(new InnerClass {
                 amount = amountText.Text,
                 Mname = Mname.SelectedItem.ToString()
             });
             MListView.ItemsSource = null;
             MListView.ItemsSource = itemList;
+        }
+
+        private void Matrname_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
+
+
+        }
+
+        private void typeM_PreviewMouseDown(object sender, MouseButtonEventArgs e) {
+
+        }
+
+        private void typeM_Click(object sender, RoutedEventArgs e) {
+            matrail.Visibility = Visibility.Hidden;
+            type.Visibility = Visibility.Visible;
+            title.Text = "اضافة صنف";
+            typeD.IsOpen = true;
+        }
+
+        private void Matrname_Click(object sender, RoutedEventArgs e) {
+            type.Visibility = Visibility.Hidden;
+            matrail.Visibility = Visibility.Visible;
+            title.Text = "اضافة مادة";
+            typeD.IsOpen = true;
+        }
+
+        private void Mname_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+
         }
     }
     

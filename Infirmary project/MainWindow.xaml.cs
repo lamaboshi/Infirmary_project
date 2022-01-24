@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Infirmary_project.Model;
+using Infirmary_project.Enum;
 
 namespace Infirmary_project {
     /// <summary>
@@ -24,7 +25,7 @@ namespace Infirmary_project {
         public static ContentControl control;
 
        InfirmaryProjectContext context =new InfirmaryProjectContext();
-        PresonPage presonPage = new PresonPage();
+        PresonPage presonPage = new PresonPage(TypeScrees.None.ToString());
         MainPage page = new MainPage();
         
         public MainWindow() {

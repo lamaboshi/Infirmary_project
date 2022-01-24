@@ -1,6 +1,11 @@
-﻿using Infirmary_project.Model;
+﻿
+using Infirmary_project.Enum;
+using Infirmary_project.Model;
+using Infirmary_project.Seedes;
+using Infirmary_project.Util.ExtensionMethod;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,20 +27,21 @@ namespace Infirmary_project.View
     public partial class MainPage : UserControl
     {
         private ContentControl content;
-        List<Person> people;
+        private HomePageSeedes seedes;
+        ObservableCollection<Person> people;
         InfirmaryProjectContext context = new InfirmaryProjectContext();
         List<string> testList = new List<string> { "Test", "Test", "Test", "Test", "Test", "Test", "Test" };
         public MainPage()
         {
             InitializeComponent();
+            seedes = new HomePageSeedes();
             content = HomePage.contentHold;
             FillCompo();
-        //  HomePage.NamePage.Text = "رئيسية";
             initializData();
         }
         void initializData() {
-            people = new List<Person>();
-            people = context.people.ToList();
+            people = new ObservableCollection<Person>();
+            people = context.people.ToObservableCollection();
             ListViewPerson.ItemsSource = people;
         }
 
@@ -55,33 +61,28 @@ namespace Infirmary_project.View
         }
 
         private void addPerson_Click(object sender, RoutedEventArgs e) {
-            content.Content = HomePage.presonPage=new PresonPage();
+            content.Content = HomePage.presonPage=new PresonPage(TypeScrees.Add.ToString());
         }
 
         private void ShowPerson_Click(object sender, RoutedEventArgs e) {
-            content.Content = HomePage.presonPage = new PresonPage();
+            content.Content = HomePage.presonPage = new PresonPage(TypeScrees.Show.ToString());
         }
         public void FillCompo()
         {
-            Kind.Items.Add("موظف");
-            Kind.Items.Add("نزيل");
-            Emp.Items.Add("سكرتاريا");
-            Emp.Items.Add("ممرض");
-            Emp.Items.Add("عامل نظافة");
-            Cus.Items.Add("الحاليين");
-            Cus.Items.Add("المغادرين");
-            Cus.Items.Add("المتوفيين");
+            Kind.ItemsSource = seedes.PersonType;
+            Emp.ItemsSource = seedes.EmployeeType;
+            Cus.ItemsSource = seedes.GuestType;
         }
 
-        private void Kind_DropDownClosed(object sender, EventArgs e)
+        private void Kind_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          if(Kind.SelectedItem.ToString()== "موظف")
+            if (Kind.SelectedValue.ToString() == "موظف")
             {
                 txt.Content = "نوع الوظيفة:";
                 Emp.Visibility = Visibility.Visible;
                 Cus.Visibility = Visibility.Hidden;
             }
-            else if(Kind.SelectedItem.ToString() == "نزيل")
+            else if (Kind.SelectedValue.ToString() == "نزيل")
             {
                 txt.Content = "نوع النزيل:";
                 Emp.Visibility = Visibility.Hidden;

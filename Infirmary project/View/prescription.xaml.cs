@@ -73,6 +73,7 @@ namespace Infirmary_project
         }
 
         private void Add_Click(object sender, RoutedEventArgs e) {
+          
             AddRport.IsOpen = true;
         }
     }

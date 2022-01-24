@@ -1,4 +1,5 @@
 ﻿using Infirmary_project.View.AddMaterial;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace Infirmary_project.View {
     /// </summary>
     public partial class ReportSection : UserControl {
         private ContentControl control;
+        public DialogHost dialog;
         List<InnerClass1> itemList = new List<InnerClass1> 
         { new InnerClass1 { 
             date="1/1/2021",
@@ -56,6 +58,7 @@ namespace Infirmary_project.View {
         public ReportSection() {
             InitializeComponent();
             control = HomePage.contentHold;
+            dialog = Addper;
             ListViewPerson.ItemsSource = itemList;
             ListViewPerson1.ItemsSource = itemList1;
             HomePage.NamePage.Text = "تقارير";
@@ -72,7 +75,7 @@ namespace Infirmary_project.View {
         }
         private void Addreport_Click(object sender, RoutedEventArgs e) {
            AddRport.IsOpen = true;
-          // Addper.IsOpen = true;
+       // Addper.IsOpen = true;
         }
     }
 }

@@ -12,7 +12,7 @@
         <materialDesign:DialogHost.DialogContent>
             <addmaterial:AddReportPage/>
         </materialDesign:DialogHost.DialogContent>
-        <materialDesign:DialogHost Name="Addper" IsOpen="False"  CloseOnClickAway="True"
+        <materialDesign:DialogHost x:Name="Addper" IsOpen="False"  CloseOnClickAway="True"
     Style="{StaticResource MaterialDesignEmbeddedDialogHost}"
   DialogMargin="8" >
             <materialDesign:DialogHost.DialogContent>
