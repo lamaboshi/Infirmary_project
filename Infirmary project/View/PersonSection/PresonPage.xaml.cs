@@ -26,13 +26,15 @@ namespace Infirmary_project.View {
         private ContentControl control;
         OpenFileDialog of;
         bool isEmployee = false;
-          public PresonPage(string type) {
+        private int Id;
+          public PresonPage(string type,int id) {
             InitializeComponent();
             TransitioningContentControl.Content = guestSection;
             control = HomePage.contentHold;
+            Id = id;
             open.Content = "اضافة جهة دخول";
             HomePage.NamePage.Text = "اضافة نزيل";
-             }
+          }
 
         private void ChangImage_Click(object sender, RoutedEventArgs e) {
             of = new OpenFileDialog();

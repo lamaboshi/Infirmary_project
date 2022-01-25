@@ -30,7 +30,6 @@ namespace Infirmary_project.View
         private HomePageSeedes seedes;
         ObservableCollection<Person> people;
         InfirmaryProjectContext context = new InfirmaryProjectContext();
-        List<string> testList = new List<string> { "Test", "Test", "Test", "Test", "Test", "Test", "Test" };
         public MainPage()
         {
             InitializeComponent();
@@ -65,6 +64,7 @@ namespace Infirmary_project.View
         }
 
         private void ShowPerson_Click(object sender, RoutedEventArgs e) {
+            var id = ((Button)sender).TabIndex;
             content.Content = HomePage.presonPage = new PresonPage(TypeScrees.Show.ToString());
         }
         public void FillCompo()

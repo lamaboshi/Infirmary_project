@@ -124,7 +124,7 @@
                                                 <Label Content="{Binding MyProperty,StringFormat=d}"></Label>
                                             </StackPanel>
                                             <StackPanel Margin="12" Grid.Row="4" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
-                                                <Button x:Name="ShowPerson" Click="ShowPerson_Click" Background="#d47e7d" Margin="3"
+                                                <Button x:Name="ShowPerson" Click="ShowPerson_Click" Background="#d47e7d" Margin="3" TabIndex="{Binding Id}"
   Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
   ToolTip="MaterialDesignFloatingActionMiniLightButton">
                                                     <materialDesign:PackIcon
